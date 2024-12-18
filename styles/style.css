@@ -1,0 +1,194 @@
+body {
+    background-color: #ffffff;
+}
+
+.numbertext p{
+    font-size: 16px;
+    color: #444444;
+    margin: 0px;
+}
+
+.fivezero p{
+    margin: 0px;
+}
+
+.zerofive p{
+    margin: 0px;
+}
+
+.sto p{
+    margin: 0px;
+}
+
+.redsign{
+    color:red
+}
+
+.fivezero{
+    font-weight: 600;
+    color: #242424;
+    font-size: 50px;
+}
+
+.zerofive{
+    font-weight: 600;
+    color: #242424;
+    font-size: 50px;
+}
+
+.sto{
+    font-weight: 600;
+    color: #242424;
+    font-size: 50px;
+}
+
+.number{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.matiz p{
+    font-size: 20px;
+    color: #444444;
+}
+
+.lorem{
+    width: 580px;
+}
+
+.lorem p{
+    font-size: 32px;
+}
+
+.info1{
+    width: 708px;
+    display: inline-grid;
+}
+
+.aboutcompany p{
+    font-weight: 600;
+    color: #242424;
+    font-size: 80px;
+    width: 500px;
+    margin-right: 230px;
+} 
+
+.text1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+header{
+    height: 100px;
+}
+
+.Bridging{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Bridging p{
+    font-weight: 600;
+    font-size: 80px;
+    width: 580px;
+    background: -webkit-linear-gradient(-30deg, #242424, #E92129);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} 
+
+.main-menu{
+    width: 360px;
+}
+
+nav .main-item .sub-menu {
+    display: none;
+    position: absolute;
+
+
+    background-color: white;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav .main-item:hover .sub-menu {
+    display: block;
+    margin-top: 2%;
+    position: left;
+  }
+.headerbuttons{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 26px;
+    top: 26px;
+    position: fixed;
+    width: 360px;
+    height: 62px;
+    left: 1360px;
+
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 14px;
+
+}
+
+
+.logotype{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    
+    position: absolute;
+    width: 216px;
+    height: 50.43px;
+    left: 235px;
+    top: 36px;
+}
+
+
+.button{
+    color: #2F2F2F;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.menu{
+    list-style-type: none;
+        /* Frame 48096156 */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 36px;
+
+    width: 360px;
+    height: 27px;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.sub-menu{
+    color: #2F2F2F;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    list-style-type: none;
+}
+
