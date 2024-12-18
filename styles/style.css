@@ -98,7 +98,7 @@ header{
     font-size: 80px;
     width: 580px;
     background: -webkit-linear-gradient(-30deg, #242424, #E92129);
-    -webkit-background-clip: text;
+   
     -webkit-text-fill-color: transparent;
 } 
 
