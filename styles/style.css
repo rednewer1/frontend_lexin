@@ -228,6 +228,31 @@ body {
   font-size: 36px;
 }
 
+.otziv {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0); /* Изначальное положение для otziv */
+}
+
+.otziv2 {
+    transform: translateX(100%); /* Смещаем otziv2 вправо за пределы */
+}
+
+.otziv, .otziv2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 600px;
+    display: none; /* Блоки по умолчанию скрыты */
+    flex-direction: row;
+    height: 340px;
+    box-shadow: 0px 4px 32px 0px #0000001A;
+    background-color: #FFFFFF;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
 .otziv{
     box-shadow: 0px 4px 32px 0px #0000001A;
     background-color: #FFFFFF;
@@ -235,6 +260,18 @@ body {
     display: flex;
     flex-direction: row;
     height: 340px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0); /* Изначальное положение для otziv */
+}
+
+
+
+.otziv img, .otziv2 img {
+    width: 100px;
+    object-fit: contain;
+    height: 100px;
+    margin: 20px;
 }
 
 .lenta-vert{
@@ -267,9 +304,31 @@ body {
     text-align: center; 
 }
 
-.lenta{
+.lenta {
     display: flex;
-  flex-direction: row;
+    position: relative;
+    width: 100%; /* Или нужная ширина */
+    height: 380px;
+    overflow: hidden; /* Скрывает элементы, выходящие за пределы */
+}
+
+.game, .game2 {
+    position: absolute; /* Блоки находятся поверх друг друга */
+    top: 0; /* Выравнивание по верху контейнера */
+    left: 0; /* Выравнивание по левому краю контейнера */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s; /* Плавная анимация для opacity и transform */
+}
+
+
+.game.active, .game2.active {
+    opacity: 1;
+}
+
+.game {
+    display: block;
+    opacity: 1;  /* Начальная видимость */
 }
 
 .sponsor img{
@@ -305,7 +364,8 @@ body {
 }
 
 .game2 img{
-    width: 384px;
+    width: 504px;
+    margin-left: 99px;
 }
 
 .portfolio{

@@ -194,9 +194,8 @@
             <div class="lenta-vert">
                 <div class="lenta">
                     <div class="game"><img src="img/games.png" alt="игры"></div>
-                    <!---
                     <div class="game2"><img src="img/game2.png" alt="игры"></div>
-                -->
+
                 </div>
                 <div class="lentabuttons">
                     <span class="slider-arrow" data-direction="left">&lt;</span>
@@ -219,20 +218,28 @@
             <div class="lenta-vert">
                 <div class="lenta">
                     <div class="otziv">
-                        <img src="img/otzyv ava.png">
+                        <img src="img/otzyv ava.png" alt="avatar">
                         <div class="adam-vert">
                             <h1>Adam Smith</h1>
-                            <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet proin ut urna sit. Varius sed euismod at est, commodo sociis dolor. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi
-                                Nibh suspendisse mauris amet, facilisi. Elit, suspendisse leo id in eu ut arcu.”</p>
+                            <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet proin ut urna sit. Varius sed euismod at est, commodo sociis dolor. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi.”</p>
                         </div>
-
+                    </div>
+            
+                    <div class="otziv2">
+                        <img src="img/otzyv ava 2.png" alt="avatar">
+                        <div class="adam-vert">
+                            <h1>Jane Doe</h1>
+                            <p>“Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.”</p>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="lentabuttons">
                     <span class="slider-arrow" data-direction="left">&lt;</span>
                     <span class="slider-arrow" data-direction="right">&gt;</span>
                 </div>
             </div>
+            
 
         </div>
 
@@ -316,5 +323,105 @@
         </div>
     </footer>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const leftArrow = document.querySelector('.slider-arrow[data-direction="left"]');
+    const rightArrow = document.querySelector('.slider-arrow[data-direction="right"]');
+    const game = document.querySelector('.game');
+    const game2 = document.querySelector('.game2');
+
+    let currentSlide = 'game'; // Начинаем с "game"
+
+    function updateSlider() {
+        if (currentSlide === 'game') {
+            game.style.opacity = '1';
+            game.style.visibility = 'visible';
+            game.style.transform = 'translateX(0)'; // Ставим game на экран
+            game2.style.opacity = '0';
+            game2.style.visibility = 'hidden';
+            game2.style.transform = 'translateX(100%)'; // Смещаем game2 вправо
+        } else {
+            game.style.opacity = '0';
+            game.style.visibility = 'hidden';
+            game.style.transform = 'translateX(-100%)'; // Смещаем game влево
+            game2.style.opacity = '1';
+            game2.style.visibility = 'visible';
+            game2.style.transform = 'translateX(0)'; // Ставим game2 на экран
+        }
+    }
+
+    rightArrow.addEventListener('click', function() {
+        if (currentSlide === 'game') {
+            currentSlide = 'game2'; // Меняем слайд на game2
+            updateSlider(); // Обновляем состояние
+        }
+    });
+
+    leftArrow.addEventListener('click', function() {
+        if (currentSlide === 'game2') {
+            currentSlide = 'game'; // Меняем слайд на game
+            updateSlider(); // Обновляем состояние
+        }
+    });
+
+    updateSlider(); // Инициализация слайдера
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+const leftArrow = document.querySelector('.slider-arrow[data-direction="left"]');
+const rightArrow = document.querySelector('.slider-arrow[data-direction="right"]');
+
+const otziv = document.querySelector('.otziv');
+const otziv2 = document.querySelector('.otziv2');
+
+let currentSlide = 'otziv'; // Начинаем с первого отзыва
+
+function updateSlider() {
+    if (currentSlide === 'otziv') {
+        otziv.style.display = 'block'; // Показываем otziv
+        otziv.style.opacity = '1'; // Плавное появление
+        otziv.style.visibility = 'visible';
+        otziv.style.transform = 'translateX(0)'; // Позиция для otziv
+        otziv2.style.opacity = '0'; // Прячем otziv2
+        otziv2.style.visibility = 'hidden';
+        otziv2.style.transform = 'translateX(100%)'; // Смещаем otziv2 вправо
+        setTimeout(() => {
+            otziv2.style.display = 'none'; // Скрываем otziv2 после завершения анимации
+        }, 500);
+    } else {
+        otziv.style.opacity = '0'; // Прячем otziv
+        otziv.style.visibility = 'hidden';
+        otziv.style.transform = 'translateX(-100%)'; // Смещаем otziv влево
+        otziv2.style.display = 'block'; // Показываем otziv2
+        otziv2.style.opacity = '1'; // Плавное появление
+        otziv2.style.visibility = 'visible';
+        otziv2.style.transform = 'translateX(0)'; // Позиция для otziv2
+        setTimeout(() => {
+            otziv.style.display = 'none'; // Скрываем otziv после завершения анимации
+        }, 500);
+    }
+}
+
+rightArrow.addEventListener('click', function() {
+    if (currentSlide === 'otziv') {
+        currentSlide = 'otziv2'; // Меняем слайд на otziv2
+        updateSlider(); // Обновляем состояние
+    }
+});
+
+leftArrow.addEventListener('click', function() {
+    if (currentSlide === 'otziv2') {
+        currentSlide = 'otziv'; // Меняем слайд на otziv
+        updateSlider(); // Обновляем состояние
+    }
+});
+
+updateSlider(); // Инициализация слайдера
+});
+
+});
+
+</script>
 
 </html>
