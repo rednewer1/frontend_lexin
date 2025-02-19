@@ -1,6 +1,393 @@
+.logotypefooter{
+    position: relative;
+  bottom: 75px;
+}
+
+.emailaddress {
+    position: relative;
+    display: inline-block;
+}
+
+.emailaddress button {
+    position: absolute;
+    right: 5px;
+    background-color: #E92129;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    z-index: 3;
+    top: 3px;
+    text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.emailaddress input {
+    background-color: rgb(39, 39, 39);
+    border: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: white; /* Белый текст */
+    font-size: 16px;
+    outline: none; /* Убираем стандартную обводку при фокусировке */
+    position: relative; /* Убедимся, что поля не перекрываются */
+    z-index: 3; /* Обеспечиваем, чтобы поля были выше других элементов */
+    width: 500px;
+}
+
+.stayinconnection h3{
+    font-weight: 700;
+  font-size: 23px;
+}
+
+.socialmediaicon{
+    margin: 0px 8px;
+}
+
+.socseti{
+    align-content: center;
+}
+
+.stayinconnection{
+    margin-left: 50px;
+}
+
+.navigation{
+    display: flex;
+  flex-direction: column;
+  width: 641px;
+}
+
+.fourbuttons{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.red{
+    background: rgba(228, 37, 44, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.contactadress p{
+    margin-left: 21px;
+}
+
+.footerinfo{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 42px;
+}
+
+.iconn{
+    max-width: fit-content;
+  object-fit: contain;
+}
+
+.contactadress{
+    display: flex;
+    flex-direction: row;
+}
+
+.contacts{
+    width: 485px;
+  height: 187px;
+}
+
+footer{
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+
+input#description{
+    height: 110px;
+}
+
+.form form div{
+    width: fit-content;
+}
+
+/* Стили для формы */
+.form form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    max-width: fit-content;
+    margin-top: 50px;
+    align-items: center;
+}
+
+/* Стили для всех полей ввода */
+.form input {
+    background-color:rgba(255, 255, 255, 0.01); /* Прозрачный белый фон */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Белая обводка с 70% прозрачностью */
+    padding: 10px;
+    margin-bottom: 15px;
+    color: white; /* Белый текст */
+    font-size: 16px;
+    outline: none; /* Убираем стандартную обводку при фокусировке */
+    position: relative; /* Убедимся, что поля не перекрываются */
+    z-index: 3; /* Обеспечиваем, чтобы поля были выше других элементов */
+    width: 500px;
+}
+
+/* Стили для placeholder (имя полей) */
+.form input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Белый цвет с 70% прозрачностью для текста в поле */
+}
+
+/* Стили для кнопки Submit */
+.form button[type="submit"] {
+    background-color: red; /* Красный цвет кнопки */
+    color: white; /* Белый цвет текста на кнопке */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Добавим немного эффекта на hover для кнопки */
+.form button[type="submit"]:hover {
+    background-color: darkred; /* Темно-красный при наведении */
+} 
+
 body {
     background-color: #ffffff;
+} 
+
+.bookingtext p{
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 400;
+  font-size: 20px;
 }
+
+.bookingtext h3{
+    font-weight: 800;
+  color: #FFFFFF;
+  font-size: 70px;
+  margin: 20px 0px;
+}
+
+.booking{
+    display: flex;
+    flex-direction: row;
+    position: relative; 
+    margin-bottom: 200px;
+}
+
+.bookingtext{
+    display: flex;
+    flex-direction: column;
+    width: 578px;
+    height: 327px;
+    margin-left: 130px;
+    margin-top: 50px;
+    z-index: 1;
+}
+
+.backforbooking{
+    max-width: fit-content;
+    position: absolute;
+    z-index: -1; /* Оставляем его на фоне, но убедимся, что он не перекрывает элементы формы */
+    width: 100%;
+    object-fit: cover; /* Сохраняем правильное соотношение */
+    height: 100%;
+}
+
+.adam-vert {
+    margin: 10px;
+}
+
+
+.otziv img{
+    width: 100px;
+    object-fit: contain;
+    height: 100px;
+    margin: 20px;
+}
+
+
+.otziv p{
+    font-weight: 300;
+  font-size: 20px;
+}
+
+.otziv h1{
+    font-weight: 700;
+  color: #E4252C;
+  font-size: 36px;
+}
+
+.otziv{
+    box-shadow: 0px 4px 32px 0px #0000001A;
+    background-color: #FFFFFF;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    height: 340px;
+}
+
+.lenta-vert{
+    display: flex;
+    flex-direction: column;
+}
+
+.lentabuttons{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    max-width: fit-content;
+    margin-left: 500px;
+    margin-top: 20px;
+}
+
+.slider-arrow{
+    width: 40px;        /* ширина кнопки */
+    height: 40px;       /* высота кнопки */
+    border-radius: 50%; /* делает форму круглой */
+    background-color: red;
+    color: white;
+    font-size: 30px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    text-align: center; 
+}
+
+.lenta{
+    display: flex;
+  flex-direction: row;
+}
+
+.sponsor img{
+    width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.sponsor{
+    width: 100%;
+  overflow: hidden;
+  margin-bottom: 200px;
+}
+
+.mentorcity{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 200px;
+}
+
+.mentorcity img {
+    display: block; /* Убирает пробелы снизу изображения */
+    max-width: 100%; /* Убедитесь, что изображение адаптируется по ширине контейнера */
+    height: auto; /* Сохраняет пропорции изображения */
+    border: 0; /* Убирает возможные рамки */
+    margin: 0; /* Убирает возможные отступы */
+    padding: 0; /* Убирает возможные внутренние отступы */
+}
+
+
+.game img{
+    width: 600px;
+}
+
+.game2 img{
+    width: 384px;
+}
+
+.portfolio{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 200px;
+    width: 1188px;
+    margin-left: 133px;
+}
+
+.portfoliotext p{
+    color: #1C1C1C;
+    font-weight: 300;
+    font-size: 18px;
+    width: 430px;
+    margin-bottom: 40px;
+}
+
+.portfoliotext h3{
+    font-weight: 800;
+    color: #242424;
+    font-size: 80px;
+    width: 500px;
+    margin-bottom: -10px;
+    
+}
+
+.kolba{
+    margin: 20px 0px 20px 0px;
+}
+
+.servicesback{
+    max-width: fit-content;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;}
+
+.services{
+    padding-top: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 150px;
+}
+
+.kartochkabold{
+    font-weight: 600;
+    color: #292929;
+}
+
+.kartochkatext{
+    color: #525252;
+}
+
+.containers{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1188px;
+}
+
+.kartochka{
+    display: flex;
+    width: 237px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px gray;
+    padding: 15px;
+    margin: 0px 30px 30px 0px;
+}
+
+.textt{
+    font-weight: 600;
+    color: #E92129;
+    font-size: 80px;
+    text-align: center;
+}
+
 
 .numbertext p{
     font-size: 16px;
@@ -73,14 +460,18 @@ body {
     width: 500px;
     margin-right: 230px;
 } 
-
-.text1{
+.aboutcompany{
+    width: 460px;
+}
+.text1 {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 100px;
-    margin-bottom: 100px;
-}
+    margin-bottom: 150px;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
 
 header{
     height: 100px;
@@ -96,15 +487,12 @@ header{
 .Bridging p{
     font-weight: 600;
     font-size: 80px;
-    width: 580px;
+    width: 490px;
     background: -webkit-linear-gradient(-30deg, #242424, #E92129);
-   
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 } 
 
-.main-menu{
-    width: 360px;
-}
 
 nav .main-item .sub-menu {
     display: none;
@@ -121,24 +509,23 @@ nav .main-item .sub-menu {
     margin-top: 2%;
     position: left;
   }
-.headerbuttons{
 
+  .headerbuttons {
     display: flex;
     flex-direction: row;
     align-items: center;
-
     gap: 26px;
     top: 26px;
     position: fixed;
-    width: 360px;
+    width: 410px;
     height: 62px;
-    left: 1360px;
-
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(15px);
-    /* Note: backdrop-filter has minimal browser support */
     border-radius: 14px;
-
+    right: 0;  /* Это прижмет элемент к правой стороне экрана */
+    left: auto; /* Обеспечит, чтобы элемент не был прижат слева */
+    margin-right: 160px;
+    z-index: 3;
 }
 
 
@@ -148,14 +535,33 @@ nav .main-item .sub-menu {
     align-items: center;
     padding: 0px;
     gap: 10px;
-    
     position: absolute;
     width: 216px;
     height: 50.43px;
-    left: 235px;
+    left: 153px;
     top: 36px;
+    right: auto;
 }
 
+.button3{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #E92129;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.button2{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #E92129;
+    border-radius: 10px;
+    padding: 10px;
+}
 
 .button{
     color: #2F2F2F;
