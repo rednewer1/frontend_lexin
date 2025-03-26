@@ -22,6 +22,9 @@
 </head>
 
 <body>
+    <div class="preloader">
+        <div class="loader">loading</div>
+    </div>
     <header>
         <div class="logotype">
             <a href="index.html"><img src="img/Component 3.png"></a>
@@ -209,39 +212,38 @@
             <img src="img/mentorcity.png" alt="спонсоры">
         </div>
  
-        <div class="portfolio">
-            <div class="portfoliotext">
+        <div class="testimonials">
+            <div class="testimonials_headline">
                 <h3>Testimonials</h3>
                 <p>Lorem ipsum dolor sit amet consectetur. Nunc viverra faucibus praesent elementum commodo.</p>
-                <a href="#" class="button3">Explore more ></a>
+                <a href="#" class="button3">Explore more &gt;</a>
             </div>
-            <div class="lenta-vert">
-                <div class="lenta">
+            <div class="lenta-vert2">
+                <div class="lenta2">
                     <div class="otziv">
                         <img src="img/otzyv ava.png" alt="avatar">
-                        <div class="adam-vert">
+                        <div class="adam-vert2">
                             <h1>Adam Smith</h1>
                             <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet proin ut urna sit. Varius sed euismod at est, commodo sociis dolor. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh suspendisse mauris amet, facilisi.”</p>
                         </div>
                     </div>
-            
+                
                     <div class="otziv2">
                         <img src="img/otzyv ava 2.png" alt="avatar">
-                        <div class="adam-vert">
+                        <div class="adam-vert2">
                             <h1>Jane Doe</h1>
                             <p>“Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.”</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="lentabuttons">
-                    <span class="slider-arrow" data-direction="left">&lt;</span>
-                    <span class="slider-arrow" data-direction="right">&gt;</span>
+                <div class="lentabuttons2">
+                    <span class="slider-arrow2" data-direction="left">&lt;</span>
+                    <span class="slider-arrow2" data-direction="right">&gt;</span>
                 </div>
             </div>
-            
-
         </div>
+        
 
         <div class="booking">
             <img src="img/backforbook.png" class="backforbooking">
@@ -323,17 +325,18 @@
         </div>
     </footer>
 </body>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const leftArrow = document.querySelector('.slider-arrow[data-direction="left"]');
-    const rightArrow = document.querySelector('.slider-arrow[data-direction="right"]');
+<script> 
+document.addEventListener("DOMContentLoaded", function() {
+    // Инициализация слайдера для игры
+    const leftArrowGame = document.querySelector('.slider-arrow[data-direction="left"]');
+    const rightArrowGame = document.querySelector('.slider-arrow[data-direction="right"]');
     const game = document.querySelector('.game');
     const game2 = document.querySelector('.game2');
 
-    let currentSlide = 'game'; // Начинаем с "game"
+    let currentSlideGame = 'game'; // Начинаем с "game"
 
-    function updateSlider() {
-        if (currentSlide === 'game') {
+    function updateSliderGame() {
+        if (currentSlideGame === 'game') {
             game.style.opacity = '1';
             game.style.visibility = 'visible';
             game.style.transform = 'translateX(0)'; // Ставим game на экран
@@ -350,78 +353,72 @@
         }
     }
 
-    rightArrow.addEventListener('click', function() {
-        if (currentSlide === 'game') {
-            currentSlide = 'game2'; // Меняем слайд на game2
-            updateSlider(); // Обновляем состояние
+    rightArrowGame.addEventListener('click', function() {
+        if (currentSlideGame === 'game') {
+            currentSlideGame = 'game2'; // Меняем слайд на game2
+            updateSliderGame(); // Обновляем состояние
         }
     });
 
-    leftArrow.addEventListener('click', function() {
-        if (currentSlide === 'game2') {
-            currentSlide = 'game'; // Меняем слайд на game
-            updateSlider(); // Обновляем состояние
+    leftArrowGame.addEventListener('click', function() {
+        if (currentSlideGame === 'game2') {
+            currentSlideGame = 'game'; // Меняем слайд на game
+            updateSliderGame(); // Обновляем состояние
         }
     });
 
-    updateSlider(); // Инициализация слайдера
+    updateSliderGame(); // Инициализация слайдера для игры
 
+    // Инициализация слайдера для отзывов
+    const leftArrowOtziv = document.querySelector('.slider-arrow2[data-direction="left"]');
+    const rightArrowOtziv = document.querySelector('.slider-arrow2[data-direction="right"]');
+    const otziv = document.querySelector('.otziv');
+    const otziv2 = document.querySelector('.otziv2');
 
-    document.addEventListener("DOMContentLoaded", function() {
+    let currentSlideOtziv = 'otziv'; // Начинаем с "otziv"
 
-const leftArrow = document.querySelector('.slider-arrow[data-direction="left"]');
-const rightArrow = document.querySelector('.slider-arrow[data-direction="right"]');
-
-const otziv = document.querySelector('.otziv');
-const otziv2 = document.querySelector('.otziv2');
-
-let currentSlide = 'otziv'; // Начинаем с первого отзыва
-
-function updateSlider() {
-    if (currentSlide === 'otziv') {
-        otziv.style.display = 'block'; // Показываем otziv
-        otziv.style.opacity = '1'; // Плавное появление
-        otziv.style.visibility = 'visible';
-        otziv.style.transform = 'translateX(0)'; // Позиция для otziv
-        otziv2.style.opacity = '0'; // Прячем otziv2
-        otziv2.style.visibility = 'hidden';
-        otziv2.style.transform = 'translateX(100%)'; // Смещаем otziv2 вправо
-        setTimeout(() => {
-            otziv2.style.display = 'none'; // Скрываем otziv2 после завершения анимации
-        }, 500);
-    } else {
-        otziv.style.opacity = '0'; // Прячем otziv
-        otziv.style.visibility = 'hidden';
-        otziv.style.transform = 'translateX(-100%)'; // Смещаем otziv влево
-        otziv2.style.display = 'block'; // Показываем otziv2
-        otziv2.style.opacity = '1'; // Плавное появление
-        otziv2.style.visibility = 'visible';
-        otziv2.style.transform = 'translateX(0)'; // Позиция для otziv2
-        setTimeout(() => {
-            otziv.style.display = 'none'; // Скрываем otziv после завершения анимации
-        }, 500);
+    function updateSliderOtziv() {
+        if (currentSlideOtziv === 'otziv') {
+            otziv.style.opacity = '1';
+            otziv.style.visibility = 'visible';
+            otziv.style.transform = 'translateX(0)';
+            otziv2.style.opacity = '0';
+            otziv2.style.visibility = 'hidden';
+            otziv2.style.transform = 'translateX(100%)'; // Смещаем второй отзыв вправо
+        } else {
+            otziv.style.opacity = '0';
+            otziv.style.visibility = 'hidden';
+            otziv.style.transform = 'translateX(-100%)'; // Смещаем первый отзыв влево
+            otziv2.style.opacity = '1';
+            otziv2.style.visibility = 'visible';
+            otziv2.style.transform = 'translateX(0)'; // Ставим второй отзыв на экран
+        }
     }
-}
 
-rightArrow.addEventListener('click', function() {
-    if (currentSlide === 'otziv') {
-        currentSlide = 'otziv2'; // Меняем слайд на otziv2
-        updateSlider(); // Обновляем состояние
-    }
+    rightArrowOtziv.addEventListener('click', function() {
+        if (currentSlideOtziv === 'otziv') {
+            currentSlideOtziv = 'otziv2'; // Меняем слайд на otziv2
+            updateSliderOtziv(); // Обновляем состояние
+        }
+    });
+
+    leftArrowOtziv.addEventListener('click', function() {
+        if (currentSlideOtziv === 'otziv2') {
+            currentSlideOtziv = 'otziv'; // Меняем слайд на otziv
+            updateSliderOtziv(); // Обновляем состояние
+        }
+    });
+
+    updateSliderOtziv(); // Инициализация слайдера для отзывов
+    //прелоадер
+    setTimeout(() => {
+    const preloader = document.querySelector('.preloader'); // Находим наш элемент прелоадера
+    preloader.style.display = 'none'; // Скрываем прелоадер
+  }, 500); // Задержка 500 мс (можно настроить по желанию)
 });
 
-leftArrow.addEventListener('click', function() {
-    if (currentSlide === 'otziv2') {
-        currentSlide = 'otziv'; // Меняем слайд на otziv
-        updateSlider(); // Обновляем состояние
-    }
-});
-
-updateSlider(); // Инициализация слайдера
-});
-
-});
 
 </script>
+    
 
 </html>
