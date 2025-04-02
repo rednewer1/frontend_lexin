@@ -1,11 +1,10 @@
-"use strict";
 document.addEventListener("DOMContentLoaded", function () {
     // Инициализация слайдера для игры
-    const leftArrowGame = document.querySelector('.slider-arrow[data-direction="left"]');
-    const rightArrowGame = document.querySelector('.slider-arrow[data-direction="right"]');
-    const game = document.querySelector('.game');
-    const game2 = document.querySelector('.game2');
-    let currentSlideGame = 'game'; // Начинаем с "game"
+    var leftArrowGame = document.querySelector('.slider-arrow[data-direction="left"]');
+    var rightArrowGame = document.querySelector('.slider-arrow[data-direction="right"]');
+    var game = document.querySelector('.game');
+    var game2 = document.querySelector('.game2');
+    var currentSlideGame = 'game'; // Начинаем с "game"
     function updateSliderGame() {
         if (currentSlideGame === 'game') {
             game.style.opacity = '1';
@@ -38,11 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     updateSliderGame(); // Инициализация слайдера для игры
     // Инициализация слайдера для отзывов
-    const leftArrowOtziv = document.querySelector('.slider-arrow2[data-direction="left"]');
-    const rightArrowOtziv = document.querySelector('.slider-arrow2[data-direction="right"]');
-    const otziv = document.querySelector('.otziv');
-    const otziv2 = document.querySelector('.otziv2');
-    let currentSlideOtziv = 'otziv'; // Начинаем с "otziv"
+    var leftArrowOtziv = document.querySelector('.slider-arrow2[data-direction="left"]');
+    var rightArrowOtziv = document.querySelector('.slider-arrow2[data-direction="right"]');
+    var otziv = document.querySelector('.otziv');
+    var otziv2 = document.querySelector('.otziv2');
+    var currentSlideOtziv = 'otziv'; // Начинаем с "otziv"
     function updateSliderOtziv() {
         if (currentSlideOtziv === 'otziv') {
             otziv.style.opacity = '1';
@@ -75,15 +74,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     updateSliderOtziv(); // Инициализация слайдера для отзывов
     // Прелоадер
-    setTimeout(() => {
-        const preloader = document.querySelector('.preloader'); // Находим наш элемент прелоадера
+    setTimeout(function () {
+        var preloader = document.querySelector('.preloader'); // Находим наш элемент прелоадера
         preloader.style.display = 'none'; // Скрываем прелоадер
     }, 500); // Задержка 500 мс 
     // Форма регистрации
-    const modal = document.getElementById('myModal');
-    const openModalButton = document.getElementById('openModal');
-    const closeModalButton = document.getElementById('closeModal');
-    const contactForm = document.getElementById('contactForm');
+    var modal = document.getElementById('myModal');
+    var openModalButton = document.getElementById('openModal');
+    var closeModalButton = document.getElementById('closeModal');
+    var contactForm = document.getElementById('contactForm');
     // Открытие модального окна при нажатии на "Contact Us"
     openModalButton.addEventListener('click', function (e) {
         e.preventDefault(); // Отменить действие по умолчанию
@@ -111,26 +110,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     // Добавление карточек через API
     function renderCards(data) {
-        const container = document.getElementById('cards-container');
+        var container = document.getElementById('cards-container');
         container.innerHTML = ''; // Очищаем контейнер
-        data.forEach(item => {
-            const cardElement = `
-          <div class="card">
-            <h2>${item.name || 'Пользователь'}</h2>
-            <p><strong>Email:</strong> ${item.email}</p>
-            <p><strong>Комментарий:</strong> ${item.body}</p>
-          </div>
-        `;
+        data.forEach(function (item) {
+            var cardElement = "\n          <div class=\"card\">\n            <h2>".concat(item.name || 'Пользователь', "</h2>\n            <p><strong>Email:</strong> ").concat(item.email, "</p>\n            <p><strong>\u041A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0439:</strong> ").concat(item.body, "</p>\n          </div>\n        ");
             container.insertAdjacentHTML('beforeend', cardElement);
         });
     }
     // Выполнение запроса к API
     fetch('https://jsonplaceholder.typicode.com/comments?_limit=3')
-        .then(response => response.json())
-        .then(data => {
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
         renderCards(data); // Отображаем полученные данные
     })
-        .catch(error => {
+        .catch(function (error) {
         console.error('Ошибка при получении данных:', error);
     });
 });

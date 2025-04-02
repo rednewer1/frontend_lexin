@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6",              // Целевая версия JavaScript
+    "module": "commonjs",         // Система модулей (CommonJS для Node.js)
+    "strict": true,              // Строгий режим проверки типов
+    "esModuleInterop": true,     // Совместимость с ES-модулями
+    "outDir": "./dist",          // Директория для скомпилированных файлов
+    "rootDir": "./ts",           // Директория с исходными файлами TypeScript
+    "sourceMap": true,           // Генерация source maps для отладки
+    "forceConsistentCasingInFileNames": true, // Убедиться, что регистр файлов корректен
+    "skipLibCheck": true         // Пропустить проверку типов в `.d.ts` файлах
+  },
+  "include": ["ts/**/*"],        // Включаем только файлы из папки ts
+  "exclude": ["node_modules"]    // Исключаем node_modules
+}
