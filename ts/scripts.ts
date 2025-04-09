@@ -1,103 +1,48 @@
+// Интерфейс для данных карточки
+interface CardData {
+  name: string;
+  email: string;
+  body: string;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Инициализация слайдера для игры
-  const leftArrowGame = document.querySelector('.slider-arrow[data-direction="left"]') as HTMLElement | null;
-  const rightArrowGame = document.querySelector('.slider-arrow[data-direction="right"]') as HTMLElement | null;
-  const game = document.querySelector('.game') as HTMLElement | null;
-  const game2 = document.querySelector('.game2') as HTMLElement | null;
+  // Функция для отображения карточек
+  function renderCards(data: CardData[]) {
+    const container = document.getElementById('cards-container') as HTMLElement | null;
 
-  if (!game || !game2) {
-    console.error('Не удалось найти элементы слайдера игры');
-    return;
-  }
-
-  let currentSlideGame: 'game' | 'game2' = 'game'; // Начинаем с "game"
-
-  function updateSliderGame() {
-    if (currentSlideGame === 'game') {
-      game.style.opacity = '1';
-      game.style.visibility = 'visible';
-      game.style.transform = 'translateX(0)'; // Ставим game на экран
-      game2.style.opacity = '0';
-      game2.style.visibility = 'hidden';
-      game2.style.transform = 'translateX(100%)'; // Смещаем game2 вправо
-    } else {
-      game.style.opacity = '0';
-      game.style.visibility = 'hidden';
-      game.style.transform = 'translateX(-100%)'; // Смещаем game влево
-      game2.style.opacity = '1';
-      game2.style.visibility = 'visible';
-      game2.style.transform = 'translateX(0)'; // Ставим game2 на экран
+    if (!container) {
+      console.error('Контейнер для карточек не найден');
+      return;
     }
-  }
 
-  if (rightArrowGame) {
-    rightArrowGame.addEventListener('click', function () {
-      if (currentSlideGame === 'game') {
-        currentSlideGame = 'game2'; // Меняем слайд на game2
-        updateSliderGame(); // Обновляем состояние
-      }
+    // Очищаем контейнер перед добавлением новых карточек
+    container.innerHTML = '';
+
+    // Создаем карточки и добавляем их в контейнер
+    data.forEach((item: CardData) => {
+      const cardElement = `
+        <div class="card">
+          <h2>${item.name || 'Пользователь'}</h2>
+          <p><strong>Email:</strong> ${item.email}</p>
+          <p><strong>Комментарий:</strong> ${item.body}</p>
+        </div>
+      `;
+      container.insertAdjacentHTML('beforeend', cardElement);
     });
   }
 
-  if (leftArrowGame) {
-    leftArrowGame.addEventListener('click', function () {
-      if (currentSlideGame === 'game2') {
-        currentSlideGame = 'game'; // Меняем слайд на game
-        updateSliderGame(); // Обновляем состояние
+  // Выполнение запроса к API
+  fetch('https://jsonplaceholder.typicode.com/comments?_limit=3')
+    .then(response => response.json())
+    .then((data: CardData[]) => {
+      // Проверяем, что данные соответствуют интерфейсу
+      if (Array.isArray(data)) {
+        renderCards(data); // Отображаем полученные данные
+      } else {
+        console.error('Полученные данные не соответствуют ожидаемому формату');
       }
+    })
+    .catch(error => {
+      console.error('Ошибка при получении данных:', error);
     });
-  }
-
-  updateSliderGame(); // Инициализация слайдера для игры
-
-  // Инициализация слайдера для отзывов
-  const leftArrowOtziv = document.querySelector('.slider-arrow2[data-direction="left"]') as HTMLElement | null;
-  const rightArrowOtziv = document.querySelector('.slider-arrow2[data-direction="right"]') as HTMLElement | null;
-  const otziv = document.querySelector('.otziv') as HTMLElement | null;
-  const otziv2 = document.querySelector('.otziv2') as HTMLElement | null;
-
-  if (!otziv || !otziv2) {
-    console.error('Не удалось найти элементы слайдера отзывов');
-    return;
-  }
-
-  let currentSlideOtziv: 'otziv' | 'otziv2' = 'otziv'; // Начинаем с "otziv"
-
-  function updateSliderOtziv() {
-    if (currentSlideOtziv === 'otziv') {
-      otziv.style.opacity = '1';
-      otziv.style.visibility = 'visible';
-      otziv.style.transform = 'translateX(0)';
-      otziv2.style.opacity = '0';
-      otziv2.style.visibility = 'hidden';
-      otziv2.style.transform = 'translateX(100%)'; // Смещаем второй отзыв вправо
-    } else {
-      otziv.style.opacity = '0';
-      otziv.style.visibility = 'hidden';
-      otziv.style.transform = 'translateX(-100%)'; // Смещаем первый отзыв влево
-      otziv2.style.opacity = '1';
-      otziv2.style.visibility = 'visible';
-      otziv2.style.transform = 'translateX(0)'; // Ставим второй отзыв на экран
-    }
-  }
-
-  if (rightArrowOtziv) {
-    rightArrowOtziv.addEventListener('click', function () {
-      if (currentSlideOtziv === 'otziv') {
-        currentSlideOtziv = 'otziv2'; // Меняем слайд на otziv2
-        updateSliderOtziv(); // Обновляем состояние
-      }
-    });
-  }
-
-  if (leftArrowOtziv) {
-    leftArrowOtziv.addEventListener('click', function () {
-      if (currentSlideOtziv === 'otziv2') {
-        currentSlideOtziv = 'otziv'; // Меняем слайд на otziv
-        updateSliderOtziv(); // Обновляем состояние
-      }
-    });
-  }
-
-  updateSliderOtziv(); // Инициализация слайдера для отзывов
 });
